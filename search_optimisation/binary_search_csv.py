@@ -30,7 +30,7 @@ def binary_search_csv(filename, target, column_i=0):
             row = next(reader)
             current_val = row[column_i]
 
-            if current_val = target:
+            if current_val == target:
                 return row
             elif current_val < target:
                 low = f.tell()
