@@ -25,6 +25,6 @@ def generate_transaction_csv(nrows):
 
         return "File generation complete!"
     
-print(generate_transaction_csv(5000000))
+print(generate_transaction_csv(50000))
 
 
