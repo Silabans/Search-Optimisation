@@ -6,7 +6,6 @@ def generate_transaction_csv(nrows):
     start_date = datetime(2020, 1, 1)
     with open("transaction_data.csv", "w", newline="") as f:
         writer = csv.writer(f)
-
         writer.writerow(["timestamp_str", "transaction_id", "amount"])
         print(f"Generating {nrows} rows...")
 
@@ -14,8 +13,11 @@ def generate_transaction_csv(nrows):
         for i in range(nrows):
             current += timedelta(seconds=r.randint(1, 60))
 
-            transaction_id = 1000000 + i
+            # This formats the datetime object into the ISO (standard string) format for consistency
+            # across systems and timezones
+            timestamp_str = current.strftime("%Y-%m-%d %H:%M:%S")
 
+            transaction_id = 1000000 + i
             amount = round(r.uniform(1.0, 5000.0), 2)
 
             writer.writerow([current, transaction_id, amount])
