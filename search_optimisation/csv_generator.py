@@ -20,7 +20,7 @@ def generate_transaction_csv(nrows):
             transaction_id = 1000000 + i
             amount = round(r.uniform(1.0, 5000.0), 2)
 
-            writer.writerow([current, transaction_id, amount])
+            writer.writerow([timestamp_str, transaction_id, amount])
 
             if i % 1000000 == 0 and i > 0:
                 print(f"Reached row {i}...")
