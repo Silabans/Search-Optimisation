@@ -1,6 +1,7 @@
 import csv
 import os
-import io
+
+
 
 def binary_search_csv(filename, target, column_i=0):
     file_size = os.path.getsize(filename)
@@ -45,3 +46,11 @@ def binary_search_csv(filename, target, column_i=0):
             else:
                 high = mid
 
+
+if __name__ == "__main__":
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    root_dir = os.path.dirname(current_dir)
+    file_to_check = os.path.join(root_dir, "transaction_data.csv")
+
+    print(binary_search_csv(file_to_check, "2020-01-10 14:28:14"))
+    
