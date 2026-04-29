@@ -52,5 +52,5 @@ if __name__ == "__main__":
     root_dir = os.path.dirname(current_dir)
     file_to_check = os.path.join(root_dir, "transaction_data.csv")
 
-    print(binary_search_csv(file_to_check, "2020-01-10 14:28:14"))
+    print(binary_search_csv(file_to_check, "2020-01-11 14:28:14"))
     

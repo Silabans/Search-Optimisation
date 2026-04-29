@@ -22,11 +22,12 @@ def generate_transaction_csv(nrows):
 
             writer.writerow([timestamp_str, transaction_id, amount])
 
-            if i % 1000000 == 0 and i > 0:
+            if i % 100000 == 0 and i > 0:
                 print(f"Reached row {i}...")
 
         return "File generation complete!"
     
-print(generate_transaction_csv(50000))
+print(generate_transaction_csv(1000000))
+
 
 
